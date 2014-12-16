@@ -20,9 +20,5 @@ rm -rf /opt/solr/latest/hdp/solr/tweets/core.properties
 
 chown -R solr:solr /opt/solr
 
-mv /usr/lib/storm/lib/httpclient-4.1.1.jar /usr/lib/storm/lib/httpclient-4.1.1.jar.bak
-mv /usr/lib/storm/lib/httpcore-4.1.jar /usr/lib/storm/lib/httpcore-4.1.jar.bak
-
 mv /opt/solr/latest/hdp/solr/tweets/conf/solrconfig.xml /opt/solr/latest/hdp/solr/tweets/conf/solrconfig.xml.bak
 cp ~/hdp21-twitter-demo/solrconfig.xml /opt/solr/latest/hdp/solr/tweets/conf/
-

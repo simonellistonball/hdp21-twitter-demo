@@ -2,9 +2,11 @@
 cd
 wget http://mirror.olnevhost.net/pub/apache/phoenix/phoenix-4.1.0/bin/phoenix-4.1.0-bin.tar.gz
 tar -zxvf phoenix-4.1.0-bin.tar.gz
-cp phoenix-4.1.0-bin/hadoop2/phoenix-4.1.0-server-hadoop2.jar /usr/lib/hbase/lib/
-chmod 644 /usr/lib/hbase/lib/phoenix-4.1.0-server-hadoop2.jar
-ln -s /usr/lib/hbase/lib/phoenix-4.1.0-server-hadoop2.jar /usr/lib/hbase/lib/phoenix.jar
+
+cp phoenix-4.1.0-bin/hadoop2/phoenix-4.1.0-server-hadoop2.jar /usr/hdp/current/hbase-client/lib/
+chmod 644 /usr/hdp/current/hbase-client/lib/phoenix-4.1.0-server-hadoop2.jar
+ln -s /usr/hdp/current/hbase-client/lib/phoenix-4.1.0-server-hadoop2.jar /usr/hdp/current/hbase-client/lib/phoenix.jar
+
 chmod ugo+rx /root
 chmod ugo+rx /root/phoenix-4.1.0-bin
 chmod ugo+rx /root/phoenix-4.1.0-bin/hadoop2

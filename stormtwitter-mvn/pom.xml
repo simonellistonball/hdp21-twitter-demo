@@ -10,21 +10,21 @@
     <name>storm-twitter-demo</name>
 
     <properties>
-        
+
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.version>2.5.6</spring.version>
-		<hadoop.version>2.4.0.2.1.1.0-385</hadoop.version>
-		<storm.version>0.9.1.2.1.1.0-385</storm.version>
-		<storm.kafka.version>0.9.1.2.1.7.0-784</storm.kafka.version>
-		<storm.hdfs.version>0.9.1.2.1.2.0-402</storm.hdfs.version>
-		<hbase.version>0.98.0.2.1.1.0-385-hadoop2</hbase.version>
-		<active.mq.version>5.7.0</active.mq.version>		
+		<hadoop.version>2.6.0.2.2.0.0-1084</hadoop.version>
+		<storm.version>0.9.3.2.2.0.0-1084</storm.version>
+		<storm.kafka.version>0.9.3.2.2.0.0-1084</storm.kafka.version>
+		<storm.hdfs.version>0.9.3.2.2.0.0-1084</storm.hdfs.version>
+		<hbase.version>0.98.4.2.2.0.0-1084-hadoop2</hbase.version>
+		<active.mq.version>5.7.0</active.mq.version>
 		<junit.version>4.5</junit.version>
 		<mail.version>1.4.3</mail.version>
 		<log4j.version>1.2.17</log4j.version>
-		<hive.version>0.13.0.2.1.1.0-385</hive.version>
+		<hive.version>0.14.0.2.2.0.0-1084</hive.version>
 		<spark.version>1.1.0.2.1.5.0-702</spark.version>
-        
+
     </properties>
 
 
@@ -40,13 +40,13 @@
         <repository>
             <id>hortonworks</id>
             <url>http://repo.hortonworks.com/content/repositories/releases/</url>
-        </repository>		
+        </repository>
         <repository>
             <id>phoenix</id>
             <url>http://repo.hortonworks.com/content/repositories/releases/org/apache/phoenix/phoenix-core/</url>
-        </repository>        
+        </repository>
 	</repositories>
-	
+
 <dependencyManagement>
     <dependencies>
         <dependency>
@@ -55,7 +55,7 @@
             <version>[4.3.1]</version>
         </dependency>
     </dependencies>
-</dependencyManagement>	
+</dependencyManagement>
 
     <dependencies>
 
@@ -68,9 +68,9 @@
 		    <groupId>xalan</groupId>
 		    <artifactId>xalan</artifactId>
 		    <version>2.7.1</version>
-		</dependency>	
-				
-		        
+		</dependency>
+
+
 		<!-- Storm Dependencies -->
         <dependency>
             <groupId>org.apache.storm</groupId>
@@ -93,17 +93,17 @@
                 <exclusion>
                     <groupId>org.apache.httpcomponents</groupId>
                     <artifactId>httpcore</artifactId>
-                </exclusion>  
+                </exclusion>
             </exclusions>
         </dependency>
-   
-        		
+
+
 		<!-- Storm Kafka Dependencies -->
 		 <dependency>
 			<groupId>org.apache.storm</groupId>
 			<artifactId>storm-kafka</artifactId>
 			<version>${storm.kafka.version}</version>
-		</dependency> 
+		</dependency>
 
 		<!-- <dependency>
 			<groupId>net.wurstmeister.storm</groupId>
@@ -120,7 +120,7 @@
                 		</exclusion>
             		</exclusions>
 		</dependency> -->
- 
+
         <!-- <dependency>
 			<groupId>org.apache.phoenix</groupId>
 			<artifactId>phoenix-core</artifactId>
@@ -139,7 +139,7 @@
                 	<version>2.0</version>
                 	<scope>system</scope>
                 	<systemPath>/root/phoenix-4.1.0-bin/hadoop2/phoenix-4.1.0-client-hadoop2.jar</systemPath>
-        	</dependency>	
+        	</dependency>
 
 		<!-- Storm HDFS Dependencies -->
 		<dependency>
@@ -147,8 +147,8 @@
 			<artifactId>storm-hdfs</artifactId>
 			<version>${storm.hdfs.version}</version>
 		</dependency>
-		
-		<!-- Hadoop Dependencies -->	
+
+		<!-- Hadoop Dependencies -->
 		<dependency>
 		    <groupId>org.apache.hadoop</groupId>
 		    <artifactId>hadoop-client</artifactId>
@@ -159,8 +159,8 @@
 		            <artifactId>slf4j-log4j12</artifactId>
 		        </exclusion>
 		    </exclusions>
-		</dependency>		
-	
+		</dependency>
+
 		<!-- HBase Dependcies -->
 		<dependency>
 			<groupId>org.apache.hbase</groupId>
@@ -175,7 +175,7 @@
                 	<groupId>org.slf4j</groupId>
                 	<artifactId>slf4j-log4j12</artifactId>
                 </exclusion>
-            </exclusions>			
+            </exclusions>
 		</dependency>
 
 
@@ -199,9 +199,9 @@
                 	<groupId>org.slf4j</groupId>
                 	<artifactId>slf4j-log4j12</artifactId>
                 </exclusion>
-            </exclusions>				
-    	</dependency>		
-		        
+            </exclusions>
+    	</dependency>
+
 		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>mailapi</artifactId>
@@ -212,31 +212,31 @@
 			<artifactId>mail</artifactId>
 			<version>${mail.version}</version>
 		</dependency>
-		
-		<dependency>        
-    		<groupId>log4j</groupId>        
-    		<artifactId>log4j</artifactId>        
-    		<version>${log4j.version}</version>    
-    	</dependency> 		
+
+		<dependency>
+    		<groupId>log4j</groupId>
+    		<artifactId>log4j</artifactId>
+    		<version>${log4j.version}</version>
+    	</dependency>
     	<dependency>
 			<groupId>org.apache.activemq</groupId>
 			<artifactId>activemq-core</artifactId>
 			<version>${active.mq.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-asl</artifactId>
 			<version>1.9.13</version>
-		</dependency>	
-		        
+		</dependency>
+
 
     </dependencies>
 
     <build>
         <sourceDirectory>src/main/java</sourceDirectory>
         <plugins>
-        
+
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -245,8 +245,8 @@
                     <source>1.7</source>
                     <target>1.7</target>
                 </configuration>
-            </plugin> 
-                    
+            </plugin>
+
 			<plugin>
 			    <groupId>org.apache.maven.plugins</groupId>
 			    <artifactId>maven-shade-plugin</artifactId>
@@ -271,7 +271,7 @@
 			                <goal>shade</goal>
 			            </goals>
 			            <configuration>
-			     
+
 			                <transformers>
 			                    <transformer
 			                            implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
@@ -285,8 +285,8 @@
 			            </configuration>
 			        </execution>
 			    </executions>
-			</plugin>	
-			        
+			</plugin>
+
             <!--
             bind the maven-assembly-plugin to the package phase
             this will create a jar file without the storm dependencies
@@ -324,10 +324,8 @@
                     <target>1.7</target>
                 </configuration>
             </plugin> -->
-            
-            
+
+
         </plugins>
     </build>
 </project>
-
-
