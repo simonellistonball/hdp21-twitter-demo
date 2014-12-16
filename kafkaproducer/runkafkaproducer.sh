@@ -1,7 +1,7 @@
 #Usage:
 #./runkafkaproducer.sh - regular mode
 #./runkafkaproducer.sh debug - this avoids streaming full JSON doc for ease of debugging
- 
+
 MODE=$1
 if [ "$MODE" == "" ]
 then
@@ -13,16 +13,16 @@ then
 	echo "Detected Kafka is already running"
 else
 	echo "Kafka is down...restarting"
-	nohup /opt/kafka/latest/bin/kafka-server-start.sh /opt/kafka/latest/config/server.properties &
+	nohup /usr/hdp/current/kafka-broker/bin/kafka-server-start.sh /usr/hdp/current/kafka-broker/config/server.properties &
 	sleep 5
 fi
-	
+
 
 echo "Compiling jar..."
 cd /root/hdp21-twitter-demo/kafkaproducer
 rm -f producertest.jar
 rm -rf classes/*
-export CLASSPATH=/opt/kafka/kafka_2.8.0-0.8.1.1/libs/\*:./\*
+export CLASSPATH=/usr/hdp/current/kafka-broker/libs/\*:./\*
 javac  -d classes *.java
 jar -cvf producertest.jar -C classes/ .
 
@@ -32,4 +32,3 @@ ntpdate pool.ntp.org
 service ntpd start
 
 java  example.producer.TestProducer $MODE
-

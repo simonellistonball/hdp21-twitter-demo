@@ -20,8 +20,7 @@ cp -f /opt/banana/latest/jetty-contexts/banana-context.xml /opt/solr/latest/hdp/
 
 #start solr
 echo "Starting Solr..."
-nohup java -jar /opt/solr/latest/hdp/start.jar -Djetty.home=/opt/solr/latest/hdp -Dsolr.solr.home=/opt/solr/latest/hdp/solr &> /root/hdp21-twitter-demo/logs/solr.out &
+nohup java -jar /opt/solr/hdp/start.jar -Djetty.home=/opt/solr/hdp -Dsolr.solr.home=/opt/solr/hdp/solr &> /root/hdp21-twitter-demo/logs/solr.out &
 echo "Waiting for Solr to start..."
 sleep 10
 curl "http://localhost:8983/solr/admin/cores?action=CREATE&name=tweets&instanceDir=/opt/solr/latest/hdp/solr/tweets"
-
